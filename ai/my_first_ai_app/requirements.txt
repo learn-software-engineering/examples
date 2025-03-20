@@ -1,0 +1,11 @@
+# Flask - Web framework for Python
+flask
+
+# OpenAI - Official Python client for the OpenAI API
+openai
+
+# python-dotenv - For loading environment variables from .env files
+python-dotenv
+
+# gunicorn - Production WSGI HTTP server
+gunicorn

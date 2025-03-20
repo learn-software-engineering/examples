@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First AI Chatbot</title>
+    <style>
+        /* Main body styling - sets font and centering for the page */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Chat container - the main chat window with scrollable content */
+        #chat-container {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            height: 400px;
+            overflow-y: auto; /* Enable vertical scrolling for long conversations */
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+
+        /* Base message styling - common properties for all messages */
+        .message {
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 18px;
+            max-width: 70%;
+            clear: both;
+        }
+
+        /* User message styling - green background, right-aligned */
+        .user-message {
+            background-color: #DCF8C6; /* Light green background similar to WhatsApp */
+            float: right;
+        }
+
+        /* AI message styling - white background, left-aligned */
+        .ai-message {
+            background-color: #FFFFFF;
+            float: left;
+            box-shadow: 0 1px 1px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+        }
+
+        /* Form layout for message input and send button */
+        #message-form {
+            display: flex; /* Use flexbox for layout */
+        }
+
+        /* Input field styling */
+        #user-input {
+            flex-grow: 1; /* Take up available space */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        /* Button styling for both Send and Clear buttons */
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50; /* Green button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Hover effect for buttons */
+        button:hover {
+            background-color: #45a049; /* Slightly darker green on hover */
+        }
+
+        /* "AI is thinking" indicator styling */
+        #thinking {
+            display: none; /* Hidden by default */
+            margin: 10px 0;
+            font-style: italic;
+            color: #888;
+        }
+
+        /* Clear chat button styling - red to differentiate from send button */
+        #clear-chat {
+            margin-bottom: 10px;
+            background-color: #f44336; /* Red button */
+        }
+
+        /* Hover effect for clear button */
+        #clear-chat:hover {
+            background-color: #d32f2f; /* Slightly darker red on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>My First AI Chatbot</h1>
+    <p>Ask me anything about artificial intelligence!</p>
+
+    <!-- Button to clear the conversation history -->
+    <button id="clear-chat">Clear Conversation</button>
+
+    <!-- Container for the chat messages -->
+    <div id="chat-container"></div>
+
+    <!-- Indicator shown while waiting for AI response -->
+    <div id="thinking">AI is thinking...</div>
+
+    <!-- Form for user input -->
+    <form id="message-form">
+        <input type="text" id="user-input" placeholder="Type your message here..." required>
+        <button type="submit">Send</button>
+    </form>
+
+    <script>
+        // Wait for the DOM to be fully loaded before attaching event handlers
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get references to DOM elements we'll need to interact with
+            const chatContainer = document.getElementById('chat-container');
+            const messageForm = document.getElementById('message-form');
+            const userInput = document.getElementById('user-input');
+            const thinking = document.getElementById('thinking');
+            const clearButton = document.getElementById('clear-chat');
+
+            // Add submit event handler to the message form
+            messageForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Prevent the form from actually submitting
+
+                // Get user message and trim whitespace
+                const message = userInput.value.trim();
+                if (!message) return; // Don't send empty messages
+
+                // Add user message to chat display
+                addMessage(message, 'user');
+                userInput.value = ''; // Clear input field
+
+                // Show "thinking" indicator while waiting for response
+                thinking.style.display = 'block';
+
+                // Send message to backend via fetch API
+                fetch('/chat', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ message: message }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Hide "thinking" indicator once response is received
+                    thinking.style.display = 'none';
+
+                    // Display response or error message
+                    if (data.error) {
+                        addMessage('Sorry, an error occurred: ' + data.error, 'ai');
+                    } else {
+                        addMessage(data.response, 'ai');
+                    }
+                })
+                .catch(error => {
+                    // Handle fetch errors (e.g., network issues)
+                    thinking.style.display = 'none';
+                    addMessage('Sorry, an error occurred while connecting to the server.', 'ai');
+                    console.error('Error:', error);
+                });
+            });
+
+            // Add click event handler to the clear button
+            clearButton.addEventListener('click', function() {
+                // Clear the chat display
+                chatContainer.innerHTML = '';
+
+                // Reset conversation history on the server
+                fetch('/clear', {
+                    method: 'POST'
+                });
+            });
+
+            // Helper function to add a message to the chat display
+            function addMessage(text, sender) {
+                // Create a new message element
+                const messageElement = document.createElement('div');
+                messageElement.classList.add('message');
+                messageElement.classList.add(sender + '-message');
+                messageElement.textContent = text;
+
+                // Add the message to the chat container
+                chatContainer.appendChild(messageElement);
+
+                // Scroll to the bottom to show the latest message
+                chatContainer.scrollTop = chatContainer.scrollHeight;
+            }
+        });
+    </script>
+</body>
+</html>
