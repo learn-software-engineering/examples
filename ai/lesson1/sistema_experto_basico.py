@@ -9,6 +9,9 @@ class DiagnosticadorRendimiento:
         self.reglas = [
             self._regla_cpu,
             self._regla_memoria,
+            self._regla_concurrencia,
+            self._regla_base_datos,
+            self._regla_red
         ]
 
     def diagnosticar(self, sintomas):
@@ -77,6 +80,67 @@ class DiagnosticadorRendimiento:
                     'Implementar un grupo de conexiones para evitar abrir y cerrar nuevas',
                     'Analizar el consumo de memoria (memory_profiler)',
                     'Considerar aumentar la cantidad de RAM del servidor'
+                ]
+            }
+        return None
+
+    def _regla_concurrencia(self, sintomas):
+        """
+        Regla: Muchas conexiones simultáneas pueden saturar el servidor.
+        """
+        if sintomas.get('conexiones_activas', 0) > 1000:
+            certeza = min(0.8, sintomas['conexiones_activas'] / 2000)
+
+            return {
+                'problema': 'Sobrecarga por exceso de conexiones concurrentes',
+                'certeza': certeza,
+                'recomendaciones': [
+                    'Implementar rate limiting',
+                    'Usar un balanceador de carga (load balancer) con múltiples instancias',
+                    'Utilizar un grupo de conexiones preestablecidas',
+                    'Implementar colas para procesos no críticos'
+                ]
+            }
+        return None
+
+    def _regla_base_datos(self, sintomas):
+        """
+        Regla: Si hay muchas queries lentas, el problema está
+        en la base de datos.
+        """
+        if sintomas.get('queries_lentas', 0) > 10:
+            certeza = min(0.95, sintomas['queries_lentas'] / 50)
+
+            return {
+                'problema': 'Queries de base de datos ineficientes',
+                'certeza': certeza,
+                'recomendaciones': [
+                    'Revisar índices en tablas frecuentemente consultadas',
+                    'Optimizar queries con EXPLAIN ANALYZE',
+                    'Implementar cache de queries (Redis)',
+                    'Considerar particionado de tablas grandes'
+                ]
+            }
+        return None
+
+    def _regla_red(self, sintomas):
+        """
+        Regla: Si el tiempo de respuesta es alto pero CPU y memoria
+        están bien, puede ser un problema de red.
+        """
+        if (sintomas.get('tiempo_respuesta', 0) > 2.0 and
+            sintomas.get('uso_cpu', 0) < 50 and
+            sintomas.get('uso_memoria', 0) < 70):
+
+            certeza = 0.7  # Menos certeza porque es por descarte
+
+            return {
+                'problema': 'Latencia de red o problemas de conectividad',
+                'certeza': certeza,
+                'recomendaciones': [
+                    'Verificar latencia entre servidor y clientes',
+                    'Implementar CDN para recursos estáticos',
+                    'Optimizar tamaño de respuestas (compresión)'
                 ]
             }
         return None
