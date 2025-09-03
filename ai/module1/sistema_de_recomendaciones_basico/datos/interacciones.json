@@ -1,0 +1,312 @@
+{
+  "interacciones": [
+    {
+      "id": "int_001",
+      "usuario": "user_001",
+      "producto": "prod_001",
+      "tipo": "compra",
+      "rating": 5,
+      "fecha": "2024-08-01",
+      "precio_pagado": 150000,
+      "contexto": {
+        "dispositivo": "mobile",
+        "sesion_duracion": 1200,
+        "fuente": "recomendacion"
+      }
+    },
+    {
+      "id": "int_002",
+      "usuario": "user_001",
+      "producto": "prod_002",
+      "tipo": "view",
+      "rating": null,
+      "fecha": "2024-08-05",
+      "precio_pagado": null,
+      "contexto": {
+        "dispositivo": "desktop",
+        "sesion_duracion": 180,
+        "fuente": "busqueda"
+      }
+    },
+    {
+      "id": "int_003",
+      "usuario": "user_001",
+      "producto": "prod_006",
+      "tipo": "compra",
+      "rating": 4,
+      "fecha": "2024-08-10",
+      "precio_pagado": 7200,
+      "contexto": {
+        "dispositivo": "mobile",
+        "sesion_duracion": 800,
+        "fuente": "categoria"
+      }
+    },
+    {
+      "id": "int_004",
+      "usuario": "user_002",
+      "producto": "prod_004",
+      "tipo": "compra",
+      "rating": 4,
+      "fecha": "2024-08-03",
+      "precio_pagado": 12000,
+      "contexto": {
+        "dispositivo": "desktop",
+        "sesion_duracion": 900,
+        "fuente": "promocion"
+      }
+    },
+    {
+      "id": "int_005",
+      "usuario": "user_002",
+      "producto": "prod_001",
+      "tipo": "view",
+      "rating": null,
+      "fecha": "2024-08-07",
+      "precio_pagado": null,
+      "contexto": {
+        "dispositivo": "mobile",
+        "sesion_duracion": 240,
+        "fuente": "recomendacion"
+      }
+    },
+    {
+      "id": "int_006",
+      "usuario": "user_002",
+      "producto": "prod_007",
+      "tipo": "compra",
+      "rating": 5,
+      "fecha": "2024-08-12",
+      "precio_pagado": 18000,
+      "contexto": {
+        "dispositivo": "desktop",
+        "sesion_duracion": 600,
+        "fuente": "busqueda"
+      }
+    },
+    {
+      "id": "int_007",
+      "usuario": "user_003",
+      "producto": "prod_003",
+      "tipo": "compra",
+      "rating": 5,
+      "fecha": "2024-08-02",
+      "precio_pagado": 3500,
+      "contexto": {
+        "dispositivo": "tablet",
+        "sesion_duracion": 450,
+        "fuente": "categoria"
+      }
+    },
+    {
+      "id": "int_008",
+      "usuario": "user_003",
+      "producto": "prod_005",
+      "tipo": "view",
+      "rating": null,
+      "fecha": "2024-08-06",
+      "precio_pagado": null,
+      "contexto": {
+        "dispositivo": "desktop",
+        "sesion_duracion": 320,
+        "fuente": "busqueda"
+      }
+    },
+    {
+      "id": "int_009",
+      "usuario": "user_003",
+      "producto": "prod_011",
+      "tipo": "compra",
+      "rating": 3,
+      "fecha": "2024-08-15",
+      "precio_pagado": 32000,
+      "contexto": {
+        "dispositivo": "desktop",
+        "sesion_duracion": 1100,
+        "fuente": "recomendacion"
+      }
+    },
+    {
+      "id": "int_010",
+      "usuario": "user_004",
+      "producto": "prod_002",
+      "tipo": "compra",
+      "rating": 4,
+      "fecha": "2024-08-04",
+      "precio_pagado": 25000,
+      "contexto": {
+        "dispositivo": "mobile",
+        "sesion_duracion": 700,
+        "fuente": "promocion"
+      }
+    },
+    {
+      "id": "int_011",
+      "usuario": "user_004",
+      "producto": "prod_004",
+      "tipo": "view",
+      "rating": null,
+      "fecha": "2024-08-08",
+      "precio_pagado": null,
+      "contexto": {
+        "dispositivo": "desktop",
+        "sesion_duracion": 150,
+        "fuente": "categoria"
+      }
+    },
+    {
+      "id": "int_012",
+      "usuario": "user_004",
+      "producto": "prod_009",
+      "tipo": "compra",
+      "rating": 4,
+      "fecha": "2024-08-14",
+      "precio_pagado": 15000,
+      "contexto": {
+        "dispositivo": "mobile",
+        "sesion_duracion": 950,
+        "fuente": "busqueda"
+      }
+    },
+    {
+      "id": "int_013",
+      "usuario": "user_005",
+      "producto": "prod_003",
+      "tipo": "view",
+      "rating": null,
+      "fecha": "2024-08-09",
+      "precio_pagado": null,
+      "contexto": {
+        "dispositivo": "tablet",
+        "sesion_duracion": 280,
+        "fuente": "recomendacion"
+      }
+    },
+    {
+      "id": "int_014",
+      "usuario": "user_005",
+      "producto": "prod_010",
+      "tipo": "compra",
+      "rating": 5,
+      "fecha": "2024-08-11",
+      "precio_pagado": 4200,
+      "contexto": {
+        "dispositivo": "desktop",
+        "sesion_duracion": 420,
+        "fuente": "categoria"
+      }
+    },
+    {
+      "id": "int_015",
+      "usuario": "user_005",
+      "producto": "prod_008",
+      "tipo": "view",
+      "rating": null,
+      "fecha": "2024-08-13",
+      "precio_pagado": null,
+      "contexto": {
+        "dispositivo": "mobile",
+        "sesion_duracion": 350,
+        "fuente": "busqueda"
+      }
+    },
+    {
+      "id": "int_016",
+      "usuario": "user_006",
+      "producto": "prod_001",
+      "tipo": "compra",
+      "rating": 5,
+      "fecha": "2024-08-05",
+      "precio_pagado": 150000,
+      "contexto": {
+        "dispositivo": "desktop",
+        "sesion_duracion": 1500,
+        "fuente": "recomendacion"
+      }
+    },
+    {
+      "id": "int_017",
+      "usuario": "user_006",
+      "producto": "prod_011",
+      "tipo": "compra",
+      "rating": 4,
+      "fecha": "2024-08-09",
+      "precio_pagado": 32000,
+      "contexto": {
+        "dispositivo": "tablet",
+        "sesion_duracion": 800,
+        "fuente": "categoria"
+      }
+    },
+    {
+      "id": "int_018",
+      "usuario": "user_006",
+      "producto": "prod_012",
+      "tipo": "view",
+      "rating": null,
+      "fecha": "2024-08-16",
+      "precio_pagado": null,
+      "contexto": {
+        "dispositivo": "desktop",
+        "sesion_duracion": 480,
+        "fuente": "promocion"
+      }
+    },
+    {
+      "id": "int_019",
+      "usuario": "user_001",
+      "producto": "prod_008",
+      "tipo": "wishlist",
+      "rating": null,
+      "fecha": "2024-08-17",
+      "precio_pagado": null,
+      "contexto": {
+        "dispositivo": "mobile",
+        "sesion_duracion": 200,
+        "fuente": "recomendacion"
+      }
+    },
+    {
+      "id": "int_020",
+      "usuario": "user_002",
+      "producto": "prod_012",
+      "tipo": "view",
+      "rating": null,
+      "fecha": "2024-08-18",
+      "precio_pagado": null,
+      "contexto": {
+        "dispositivo": "desktop",
+        "sesion_duracion": 380,
+        "fuente": "busqueda"
+      }
+    },
+    {
+      "id": "int_021",
+      "usuario": "user_004",
+      "producto": "prod_001",
+      "tipo": "wishlist",
+      "rating": null,
+      "fecha": "2024-08-19",
+      "precio_pagado": null,
+      "contexto": {
+        "dispositivo": "mobile",
+        "sesion_duracion": 150,
+        "fuente": "categoria"
+      }
+    },
+    {
+      "id": "int_022",
+      "usuario": "user_003",
+      "producto": "prod_008",
+      "tipo": "view",
+      "rating": null,
+      "fecha": "2024-08-20",
+      "precio_pagado": null,
+      "contexto": {
+        "dispositivo": "tablet",
+        "sesion_duracion": 220,
+        "fuente": "recomendacion"
+      }
+    }
+  ]
+}

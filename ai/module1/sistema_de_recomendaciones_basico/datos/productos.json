@@ -1,0 +1,208 @@
+{
+  "productos": {
+    "prod_001": {
+      "nombre": "Smartphone Samsung Galaxy S24",
+      "categoria": "tecnologia",
+      "precio": 150000,
+      "rating": 4.5,
+      "num_reviews": 1250,
+      "tags": ["android", "camara", "5g", "premium"],
+      "target_edad": [20, 50],
+      "popularidad": 95,
+      "descripcion": "Smartphone de última generación con cámara profesional",
+      "especificaciones": {
+        "pantalla": "6.2 pulgadas",
+        "memoria": "256GB",
+        "camara": "50MP",
+        "bateria": "4000mAh"
+      }
+    },
+    "prod_002": {
+      "nombre": "Auriculares Bluetooth Sport Pro",
+      "categoria": "tecnologia",
+      "precio": 25000,
+      "rating": 4.2,
+      "num_reviews": 850,
+      "tags": ["bluetooth", "deportes", "resistente", "inalambrico"],
+      "target_edad": [18, 40],
+      "popularidad": 80,
+      "descripcion": "Auriculares deportivos con cancelación de ruido",
+      "especificaciones": {
+        "autonomia": "8 horas",
+        "resistencia": "IPX7",
+        "conectividad": "Bluetooth 5.0",
+        "peso": "45g"
+      }
+    },
+    "prod_003": {
+      "nombre": "Libro: Cocina Mediterránea Saludable",
+      "categoria": "lectura",
+      "precio": 3500,
+      "rating": 4.8,
+      "num_reviews": 320,
+      "tags": ["cocina", "recetas", "salud", "mediterranea"],
+      "target_edad": [25, 65],
+      "popularidad": 60,
+      "descripcion": "Guía completa de cocina mediterránea con 200 recetas",
+      "especificaciones": {
+        "paginas": 350,
+        "idioma": "Español",
+        "formato": "Tapa blanda",
+        "autor": "Chef María Gonzalez"
+      }
+    },
+    "prod_004": {
+      "nombre": "Juego: Call of Duty Modern Warfare III",
+      "categoria": "gaming",
+      "precio": 12000,
+      "rating": 4.3,
+      "num_reviews": 2100,
+      "tags": ["accion", "multijugador", "fps", "guerra"],
+      "target_edad": [16, 35],
+      "popularidad": 90,
+      "descripcion": "Juego de acción militar con modo multijugador",
+      "especificaciones": {
+        "plataforma": "PC, PlayStation, Xbox",
+        "clasificacion": "M17+",
+        "modo": "Multijugador/Individual",
+        "tamaño": "65GB"
+      }
+    },
+    "prod_005": {
+      "nombre": "Kit Herramientas Jardín Premium",
+      "categoria": "hogar",
+      "precio": 8500,
+      "rating": 4.0,
+      "num_reviews": 180,
+      "tags": ["jardineria", "herramientas", "exterior", "plantas"],
+      "target_edad": [30, 70],
+      "popularidad": 45,
+      "descripcion": "Set completo de herramientas para jardinería",
+      "especificaciones": {
+        "piezas": "15 herramientas",
+        "material": "Acero inoxidable",
+        "incluye": "Estuche organizador",
+        "garantia": "2 años"
+      }
+    },
+    "prod_006": {
+      "nombre": "Proteína Whey Gold Standard",
+      "categoria": "fitness",
+      "precio": 7200,
+      "rating": 4.6,
+      "num_reviews": 950,
+      "tags": ["proteina", "suplemento", "fitness", "musculo"],
+      "target_edad": [18, 45],
+      "popularidad": 85,
+      "descripcion": "Proteína whey de alta calidad para deportistas",
+      "especificaciones": {
+        "peso": "2.27kg",
+        "sabores": "Chocolate, Vainilla, Fresa",
+        "proteina_por_servida": "24g",
+        "porciones": "74"
+      }
+    },
+    "prod_007": {
+      "nombre": "Auriculares Gaming HyperX Cloud III",
+      "categoria": "gaming",
+      "precio": 18000,
+      "rating": 4.4,
+      "num_reviews": 680,
+      "tags": ["gaming", "auriculares", "microfono", "competitivo"],
+      "target_edad": [16, 35],
+      "popularidad": 75,
+      "descripcion": "Auriculares profesionales para gaming competitivo",
+      "especificaciones": {
+        "microfono": "Desmontable",
+        "driver": "50mm",
+        "frecuencia": "15Hz-25kHz",
+        "plataforma": "PC, PlayStation, Xbox"
+      }
+    },
+    "prod_008": {
+      "nombre": "Cámara DSLR Canon EOS Rebel T7",
+      "categoria": "tecnologia",
+      "precio": 85000,
+      "rating": 4.3,
+      "num_reviews": 420,
+      "tags": ["camara", "fotografia", "dslr", "canon"],
+      "target_edad": [20, 55],
+      "popularidad": 70,
+      "descripcion": "Cámara DSLR ideal para principiantes y aficionados",
+      "especificaciones": {
+        "megapixeles": "24.1MP",
+        "pantalla": "3 pulgadas",
+        "video": "Full HD 1080p",
+        "incluye": "Lente 18-55mm"
+      }
+    },
+    "prod_009": {
+      "nombre": "Set Pesas Ajustables 40kg",
+      "categoria": "fitness",
+      "precio": 15000,
+      "rating": 4.1,
+      "num_reviews": 310,
+      "tags": ["pesas", "fitness", "entrenamiento", "fuerza"],
+      "target_edad": [18, 50],
+      "popularidad": 65,
+      "descripcion": "Set de pesas ajustables para entrenamiento en casa",
+      "especificaciones": {
+        "peso_max": "40kg total",
+        "material": "Hierro fundido",
+        "incluye": "Barra y discos",
+        "ajustable": "2kg-20kg por mancuerna"
+      }
+    },
+    "prod_010": {
+      "nombre": "Libro: El Arte de la Guerra Digital",
+      "categoria": "lectura",
+      "precio": 4200,
+      "rating": 4.5,
+      "num_reviews": 280,
+      "tags": ["negocios", "tecnologia", "estrategia", "digital"],
+      "target_edad": [25, 50],
+      "popularidad": 55,
+      "descripcion": "Guía estratégica para el mundo digital moderno",
+      "especificaciones": {
+        "paginas": 280,
+        "idioma": "Español",
+        "formato": "Tapa blanda",
+        "autor": "Roberto Martinez"
+      }
+    },
+    "prod_011": {
+      "nombre": "Cafetera Espresso DeLonghi",
+      "categoria": "cocina",
+      "precio": 32000,
+      "rating": 4.2,
+      "num_reviews": 520,
+      "tags": ["cafe", "espresso", "cocina", "bebidas"],
+      "target_edad": [25, 60],
+      "popularidad": 70,
+      "descripcion": "Cafetera espresso automática con molinillo integrado",
+      "especificaciones": {
+        "capacidad": "1.4L",
+        "presion": "15 bar",
+        "molinillo": "Integrado",
+        "funciones": "Cappuccino automático"
+      }
+    },
+    "prod_012": {
+      "nombre": "Tablet Samsung Galaxy Tab S9",
+      "categoria": "tecnologia",
+      "precio": 95000,
+      "rating": 4.4,
+      "num_reviews": 380,
+      "tags": ["tablet", "android", "productividad", "samsung"],
+      "target_edad": [20, 55],
+      "popularidad": 80,
+      "descripcion": "Tablet premium para trabajo y entretenimiento",
+      "especificaciones": {
+        "pantalla": "11 pulgadas",
+        "almacenamiento": "256GB",
+        "ram": "8GB",
+        "s_pen": "Incluido"
+      }
+    }
+  }
+}
