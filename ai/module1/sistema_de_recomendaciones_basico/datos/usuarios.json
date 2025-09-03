@@ -1,0 +1,94 @@
+{
+  "usuarios": {
+    "user_001": {
+      "nombre": "Ana López",
+      "edad": 28,
+      "genero": "F",
+      "ubicacion": "Buenos Aires",
+      "intereses": ["tecnologia", "fitness", "lectura"],
+      "nivel_gasto": "medio",
+      "fecha_registro": "2024-01-15",
+      "perfil_detallado": {
+        "profesion": "Diseñadora UX",
+        "educacion": "Universidad",
+        "estado_civil": "Soltera",
+        "mascotas": true
+      }
+    },
+    "user_002": {
+      "nombre": "Carlos Mendez",
+      "edad": 35,
+      "genero": "M",
+      "ubicacion": "Córdoba",
+      "intereses": ["deportes", "gaming", "musica"],
+      "nivel_gasto": "alto",
+      "fecha_registro": "2024-02-01",
+      "perfil_detallado": {
+        "profesion": "Ingeniero de Software",
+        "educacion": "Universidad",
+        "estado_civil": "Casado",
+        "mascotas": false
+      }
+    },
+    "user_003": {
+      "nombre": "María Rodriguez",
+      "edad": 42,
+      "genero": "F",
+      "ubicacion": "Rosario",
+      "intereses": ["cocina", "jardineria", "arte"],
+      "nivel_gasto": "bajo",
+      "fecha_registro": "2024-01-20",
+      "perfil_detallado": {
+        "profesion": "Profesora",
+        "educacion": "Universidad",
+        "estado_civil": "Casada",
+        "mascotas": true
+      }
+    },
+    "user_004": {
+      "nombre": "Diego Silva",
+      "edad": 24,
+      "genero": "M",
+      "ubicacion": "Buenos Aires",
+      "intereses": ["tecnologia", "gaming", "fitness"],
+      "nivel_gasto": "medio",
+      "fecha_registro": "2024-03-01",
+      "perfil_detallado": {
+        "profesion": "Estudiante",
+        "educacion": "Universidad",
+        "estado_civil": "Soltero",
+        "mascotas": false
+      }
+    },
+    "user_005": {
+      "nombre": "Laura Martínez",
+      "edad": 31,
+      "genero": "F",
+      "ubicacion": "Mendoza",
+      "intereses": ["lectura", "arte", "musica"],
+      "nivel_gasto": "medio",
+      "fecha_registro": "2024-02-15",
+      "perfil_detallado": {
+        "profesion": "Arquitecta",
+        "educacion": "Universidad",
+        "estado_civil": "Soltera",
+        "mascotas": true
+      }
+    },
+    "user_006": {
+      "nombre": "Roberto García",
+      "edad": 29,
+      "genero": "M",
+      "ubicacion": "La Plata",
+      "intereses": ["deportes", "tecnologia", "cocina"],
+      "nivel_gasto": "alto",
+      "fecha_registro": "2024-01-10",
+      "perfil_detallado": {
+        "profesion": "Médico",
+        "educacion": "Universidad",
+        "estado_civil": "Casado",
+        "mascotas": true
+      }
+    }
+  }
+}
