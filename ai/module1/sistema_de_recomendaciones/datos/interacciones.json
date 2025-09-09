@@ -5,12 +5,12 @@
       "usuario": "user_001",
       "producto": "prod_001",
       "tipo": "compra",
-      "rating": 5,
+      "valoracion": 5,
       "fecha": "2024-08-01",
       "precio_pagado": 150000,
       "contexto": {
         "dispositivo": "mobile",
-        "sesion_duracion": 1200,
+        "duracion_sesion": 1200,
         "fuente": "recomendacion"
       }
     },
@@ -19,12 +19,12 @@
       "usuario": "user_001",
       "producto": "prod_002",
       "tipo": "view",
-      "rating": null,
+      "valoracion": null,
       "fecha": "2024-08-05",
       "precio_pagado": null,
       "contexto": {
         "dispositivo": "desktop",
-        "sesion_duracion": 180,
+        "duracion_sesion": 180,
         "fuente": "busqueda"
       }
     },
@@ -33,12 +33,12 @@
       "usuario": "user_001",
       "producto": "prod_006",
       "tipo": "compra",
-      "rating": 4,
+      "valoracion": 4,
       "fecha": "2024-08-10",
       "precio_pagado": 7200,
       "contexto": {
         "dispositivo": "mobile",
-        "sesion_duracion": 800,
+        "duracion_sesion": 800,
         "fuente": "categoria"
       }
     },
@@ -47,12 +47,12 @@
       "usuario": "user_002",
       "producto": "prod_004",
       "tipo": "compra",
-      "rating": 4,
+      "valoracion": 4,
       "fecha": "2024-08-03",
       "precio_pagado": 12000,
       "contexto": {
         "dispositivo": "desktop",
-        "sesion_duracion": 900,
+        "duracion_sesion": 900,
         "fuente": "promocion"
       }
     },
@@ -61,12 +61,12 @@
       "usuario": "user_002",
       "producto": "prod_001",
       "tipo": "view",
-      "rating": null,
+      "valoracion": null,
       "fecha": "2024-08-07",
       "precio_pagado": null,
       "contexto": {
         "dispositivo": "mobile",
-        "sesion_duracion": 240,
+        "duracion_sesion": 240,
         "fuente": "recomendacion"
       }
     },
@@ -75,12 +75,12 @@
       "usuario": "user_002",
       "producto": "prod_007",
       "tipo": "compra",
-      "rating": 5,
+      "valoracion": 5,
       "fecha": "2024-08-12",
       "precio_pagado": 18000,
       "contexto": {
         "dispositivo": "desktop",
-        "sesion_duracion": 600,
+        "duracion_sesion": 600,
         "fuente": "busqueda"
       }
     },
@@ -89,12 +89,12 @@
       "usuario": "user_003",
       "producto": "prod_003",
       "tipo": "compra",
-      "rating": 5,
+      "valoracion": 5,
       "fecha": "2024-08-02",
       "precio_pagado": 3500,
       "contexto": {
         "dispositivo": "tablet",
-        "sesion_duracion": 450,
+        "duracion_sesion": 450,
         "fuente": "categoria"
       }
     },
@@ -103,12 +103,12 @@
       "usuario": "user_003",
       "producto": "prod_005",
       "tipo": "view",
-      "rating": null,
+      "valoracion": null,
       "fecha": "2024-08-06",
       "precio_pagado": null,
       "contexto": {
         "dispositivo": "desktop",
-        "sesion_duracion": 320,
+        "duracion_sesion": 320,
         "fuente": "busqueda"
       }
     },
@@ -117,12 +117,12 @@
       "usuario": "user_003",
       "producto": "prod_011",
       "tipo": "compra",
-      "rating": 3,
+      "valoracion": 3,
       "fecha": "2024-08-15",
       "precio_pagado": 32000,
       "contexto": {
         "dispositivo": "desktop",
-        "sesion_duracion": 1100,
+        "duracion_sesion": 1100,
         "fuente": "recomendacion"
       }
     },
@@ -131,12 +131,12 @@
       "usuario": "user_004",
       "producto": "prod_002",
       "tipo": "compra",
-      "rating": 4,
+      "valoracion": 4,
       "fecha": "2024-08-04",
       "precio_pagado": 25000,
       "contexto": {
         "dispositivo": "mobile",
-        "sesion_duracion": 700,
+        "duracion_sesion": 700,
         "fuente": "promocion"
       }
     },
@@ -145,12 +145,12 @@
       "usuario": "user_004",
       "producto": "prod_004",
       "tipo": "view",
-      "rating": null,
+      "valoracion": null,
       "fecha": "2024-08-08",
       "precio_pagado": null,
       "contexto": {
         "dispositivo": "desktop",
-        "sesion_duracion": 150,
+        "duracion_sesion": 150,
         "fuente": "categoria"
       }
     },
@@ -159,12 +159,12 @@
       "usuario": "user_004",
       "producto": "prod_009",
       "tipo": "compra",
-      "rating": 4,
+      "valoracion": 4,
       "fecha": "2024-08-14",
       "precio_pagado": 15000,
       "contexto": {
         "dispositivo": "mobile",
-        "sesion_duracion": 950,
+        "duracion_sesion": 950,
         "fuente": "busqueda"
       }
     },
@@ -173,12 +173,12 @@
       "usuario": "user_005",
       "producto": "prod_003",
       "tipo": "view",
-      "rating": null,
+      "valoracion": null,
       "fecha": "2024-08-09",
       "precio_pagado": null,
       "contexto": {
         "dispositivo": "tablet",
-        "sesion_duracion": 280,
+        "duracion_sesion": 280,
         "fuente": "recomendacion"
       }
     },
@@ -187,12 +187,12 @@
       "usuario": "user_005",
       "producto": "prod_010",
       "tipo": "compra",
-      "rating": 5,
+      "valoracion": 5,
       "fecha": "2024-08-11",
       "precio_pagado": 4200,
       "contexto": {
         "dispositivo": "desktop",
-        "sesion_duracion": 420,
+        "duracion_sesion": 420,
         "fuente": "categoria"
       }
     },
@@ -201,12 +201,12 @@
       "usuario": "user_005",
       "producto": "prod_008",
       "tipo": "view",
-      "rating": null,
+      "valoracion": null,
       "fecha": "2024-08-13",
       "precio_pagado": null,
       "contexto": {
         "dispositivo": "mobile",
-        "sesion_duracion": 350,
+        "duracion_sesion": 350,
         "fuente": "busqueda"
       }
     },
@@ -215,12 +215,12 @@
       "usuario": "user_006",
       "producto": "prod_001",
       "tipo": "compra",
-      "rating": 5,
+      "valoracion": 5,
       "fecha": "2024-08-05",
       "precio_pagado": 150000,
       "contexto": {
         "dispositivo": "desktop",
-        "sesion_duracion": 1500,
+        "duracion_sesion": 1500,
         "fuente": "recomendacion"
       }
     },
@@ -229,12 +229,12 @@
       "usuario": "user_006",
       "producto": "prod_011",
       "tipo": "compra",
-      "rating": 4,
+      "valoracion": 4,
       "fecha": "2024-08-09",
       "precio_pagado": 32000,
       "contexto": {
         "dispositivo": "tablet",
-        "sesion_duracion": 800,
+        "duracion_sesion": 800,
         "fuente": "categoria"
       }
     },
@@ -243,12 +243,12 @@
       "usuario": "user_006",
       "producto": "prod_012",
       "tipo": "view",
-      "rating": null,
+      "valoracion": null,
       "fecha": "2024-08-16",
       "precio_pagado": null,
       "contexto": {
         "dispositivo": "desktop",
-        "sesion_duracion": 480,
+        "duracion_sesion": 480,
         "fuente": "promocion"
       }
     },
@@ -257,12 +257,12 @@
       "usuario": "user_001",
       "producto": "prod_008",
       "tipo": "wishlist",
-      "rating": null,
+      "valoracion": null,
       "fecha": "2024-08-17",
       "precio_pagado": null,
       "contexto": {
         "dispositivo": "mobile",
-        "sesion_duracion": 200,
+        "duracion_sesion": 200,
         "fuente": "recomendacion"
       }
     },
@@ -271,12 +271,12 @@
       "usuario": "user_002",
       "producto": "prod_012",
       "tipo": "view",
-      "rating": null,
+      "valoracion": null,
       "fecha": "2024-08-18",
       "precio_pagado": null,
       "contexto": {
         "dispositivo": "desktop",
-        "sesion_duracion": 380,
+        "duracion_sesion": 380,
         "fuente": "busqueda"
       }
     },
@@ -285,12 +285,12 @@
       "usuario": "user_004",
       "producto": "prod_001",
       "tipo": "wishlist",
-      "rating": null,
+      "valoracion": null,
       "fecha": "2024-08-19",
       "precio_pagado": null,
       "contexto": {
         "dispositivo": "mobile",
-        "sesion_duracion": 150,
+        "duracion_sesion": 150,
         "fuente": "categoria"
       }
     },
@@ -299,12 +299,12 @@
       "usuario": "user_003",
       "producto": "prod_008",
       "tipo": "view",
-      "rating": null,
+      "valoracion": null,
       "fecha": "2024-08-20",
       "precio_pagado": null,
       "contexto": {
         "dispositivo": "tablet",
-        "sesion_duracion": 220,
+        "duracion_sesion": 220,
         "fuente": "recomendacion"
       }
     }

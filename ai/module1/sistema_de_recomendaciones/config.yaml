@@ -1,0 +1,27 @@
+# CONFIGURACIÓN DEL SISTEMA DE RECOMENDACIONES
+
+# Pesos del sistema
+pesos_algoritmos:
+  filtrado_colaborativo: 0.6    # 60% - Usuarios similares
+  filtrado_contenido: 0.4       # 40% - Perfil del usuario
+
+# Métricas de similitud
+similitud_usuarios:
+  boost_mismo_genero: 0.2       # Boost por mismo género
+  boost_misma_ubicacion: 0.2    # Boost por misma ubicación
+  peso_productos: 0.4           # Productos en común (Jaccard)
+  peso_demografica: 0.3         # Edad, género, ubicación
+  peso_intereses: 0.3           # Intereses compartidos
+  tolerancia_edad: 10           # Diferencia de hasta 10 años para considerar edad similar
+
+# Puntuación de contenido
+puntuacion_contenido:
+  peso_interes_categoria: 2.0   # Interés coincide con categoría
+  peso_interes_etiquetas: 1.5        # Interés coincide con etiquetas
+  peso_edad_apropiada: 1.5      # Edad dentro del target
+  peso_valoracion: 1.0              # Calidad del producto
+  peso_popularidad: 1.0         # Popularidad general
+  peso_precio_apropiado: 1.0    # Precio adecuado al nivel de gasto
+  penalizacion_precio: -0.2     # Penalización por precio inapropiado
+  precio_minimo_para_nivel_gasto_alto: 50000
+  peso_maximo_para_nivel_de_gasto_bajo: 15000
