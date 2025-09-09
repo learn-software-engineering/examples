@@ -1,3 +1,16 @@
+"""
+Sistema de Recomendaciones
+
+Este código implementa un sistema de recomendaciones completo que combina múltiples
+técnicas para sugerir productos relevantes a los usuarios.
+
+Conceptos que aprenderás
+- Filtrado Colaborativo: "A usuarios como tú también les gustó..."
+- Filtrado por Contenido: "Esto coincide con tus intereses..."
+- Sistemas Híbridos: Combinar múltiples enfoques
+- Cálculo de Similitudes: Medir qué tan parecidos son dos usuarios
+- Reglas de Negocio: Aplicar lógica empresarial específica
+"""
 from collections import Counter, defaultdict
 from datetime import datetime
 import json
@@ -89,7 +102,74 @@ class SistemaRecomendaciones:
             raise
 
     def _configurar_reglas_negocio(self):
-        pass
+        """
+        Configurar las reglas de negocio
+        Las reglas de negocio son lógica específica del dominio que modifica
+        las recomendaciones básicas. Ejemplos:
+        - Promociones especiales
+        - Preferencias estacionales
+        - Políticas de la empresa
+        - Personalización por segmentos
+
+        Patrón de diseño: Strategy
+        Cada regla es una estrategia que puede aplicarse independientemente
+        """
+        reglas_raw = self.config.get_reglas_de_negocio()
+        for regla in reglas_raw:
+            try:
+                regla_construida = self._construir_regla(regla)
+                self.reglas_negocio.append(regla_construida)
+            except ValueError as e:
+                raise ValueError(f"Error construyendo reglas de negocio: {e}") from e
+
+    def _construir_regla(self, regla_yaml) -> Dict:
+        # Mapear condiciones
+        condicion = regla_yaml["condicion"]
+        tipo_de_condicion = condicion["tipo"]
+        condicion_generada = None
+        match tipo_de_condicion:
+            case "edad":
+                operacion = condicion["operacion"]
+                match operacion:
+                    case "menor":
+                        condicion_generada = lambda usuario: usuario["edad"] < condicion["valor"]
+                    case "menor_igual":
+                        condicion_generada = lambda usuario: usuario["edad"] <= condicion["valor"]
+                    case "igual":
+                        condicion_generada = lambda usuario: usuario["edad"] == condicion["valor"]
+                    case "mayor_igual":
+                        condicion_generada = lambda usuario: usuario["edad"] >= condicion["valor"]
+                    case "mayor":
+                        condicion_generada = lambda usuario: usuario["edad"] > condicion["valor"]
+            case "nivel_gasto":
+                condicion_generada = lambda usuario: usuario["nivel_gasto"] == condicion["valor"]
+            case "siempre":
+                condicion_generada = lambda usuario: True
+            case _:
+                raise ValueError(f"Condición desconocida: {tipo_de_condicion}")
+
+        # Mapear acciones
+        accion = regla_yaml["accion"]
+        tipo_de_accion = accion["tipo"]
+        accion_generada = None
+        match tipo_de_accion:
+            case "filtrar_categoria":
+                accion_generada = self._filtrar_por_categoria(accion["categoria"])
+            case "filtrar_precio":
+                accion_generada = self._filtrar_por_precio(accion["precio_maximo"])
+            case "todos":
+                accion_generada = lambda productos: productos
+            case _:
+                raise ValueError(f"Acción desconocida: {tipo_de_accion}")
+
+        return {
+            "nombre": regla_yaml["nombre"],
+            "descripcion": regla_yaml["descripcion"],
+            "condicion": condicion_generada,
+            "accion": accion_generada,
+            "boost": regla_yaml.get("boost", 1.0),
+            "activa": regla_yaml.get("activa", True)
+        }
 
     def _filtrar_por_categoria(self, categoria: str):
         """Helper para crear filtros por categoría"""
@@ -98,7 +178,6 @@ class SistemaRecomendaciones:
     def _filtrar_por_precio(self, max_precio: int):
         """Helper para crear filtros por precio"""
         return lambda productos: [p for p in productos if self.productos[p]["precio"] <= max_precio]
-
 
     def _calculo_simulitud_por_productos(self, usuario_a: str, usuario_b: str) -> float:
         """
@@ -312,6 +391,71 @@ class SistemaRecomendaciones:
 
         return estadisticas
 
+    def aplicar_reglas_negocio(self, id_usuario: str, recomendaciones: List[Tuple[str, float]]) -> List[Tuple[str, float]]:
+        """
+        Aplicación de reglas de negocio
+        Las reglas de negocio permiten incorporar lógica específica del dominio
+        que va más allá de los algoritmos puros de recomendación.
+
+        Ejemplos:
+        - Promociones estacionales
+        - Políticas de inventario
+        - Segmentación de usuarios
+        - Compliance regulatorio
+        - Márgenes de ganancia
+
+        Proceso
+        1. Para cada regla activa
+        2. Verificar si aplica al usuario
+        3. Identificar productos que cumplen la condición
+        4. Aplicar boost o penalización a la puntuación
+
+        Patrón de diseño: Chain of Responsibility
+        Cada regla se ejecuta secuencialmente y modifica el resultado
+
+        Args:
+            id_usuario: Usuario objetivo
+            recomendaciones: Lista inicial de (id_producto, puntuacion)
+
+        Returns:
+            Recomendaciones ajustadas por reglas de negocio
+        """
+
+        print(f"   Aplicando reglas de negocio")
+
+        usuario = self.usuarios[id_usuario]
+
+        # Convertir a diccionario para manipulación eficiente
+        puntuaciones_ajustadas = {producto: puntuacion for producto, puntuacion in recomendaciones}
+        reglas_aplicadas = []
+
+        # Aplicar cada regla activa
+        for regla in self.reglas_negocio:
+            if not regla.get("activa", True):
+                continue
+            # Verificar si la regla aplica a este usuario
+            if regla["condicion"](usuario):
+                # Obtener productos que califican para esta regla
+                productos_aplicables = regla["accion"](list(puntuaciones_ajustadas.keys()))
+                # Aplicar boost a productos aplicables
+                productos_afectados = 0
+                for producto in productos_aplicables:
+                    if producto in puntuaciones_ajustadas:
+                        puntuaciones_ajustadas[producto] *= regla["boost"]
+                        productos_afectados += 1
+
+                if productos_afectados > 0:
+                    reglas_aplicadas.append(regla["nombre"])
+                    print(f"      * {regla['descripcion']}: {productos_afectados} productos afectados")
+
+        print(f"   {len(reglas_aplicadas)} reglas aplicadas: {', '.join(reglas_aplicadas)}")
+
+        # Convertir de vuelta a lista ordenada
+        resultado = [(producto, score) for producto, score in puntuaciones_ajustadas.items()]
+        resultado.sort(key=lambda x: x[1], reverse=True)
+
+        return resultado
+
     def calcular_similitud_usuarios(self, usuario_a: str, usuario_b: str) -> float:
         """
         CÁLCULO DE SIMILITUD ENTRE USUARIOS
@@ -463,11 +607,9 @@ class SistemaRecomendaciones:
 
         print(f"      * Productos únicos después de combinar: {len(puntuaciones_combinados)}")
 
-        # TODO
         # 5- Aplicación de reglas de negocio
         recomendaciones_raw = list(puntuaciones_combinados.items())
-        recomendaciones_ajustadas = recomendaciones_raw
-        # recomendaciones_ajustadas = self.aplicar_reglas_negocio(usuario_id, recomendaciones_raw)
+        recomendaciones_ajustadas = self.aplicar_reglas_negocio(id_usuario, recomendaciones_raw)
 
         # Seleccionar las primeras N recomendaciones
         primeras_recomendaciones = recomendaciones_ajustadas[:n]

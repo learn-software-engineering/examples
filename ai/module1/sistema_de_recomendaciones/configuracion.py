@@ -1,5 +1,5 @@
 import yaml
-from typing import Dict
+from typing import Dict, List
 
 
 class Configuracion:
@@ -187,3 +187,8 @@ class Configuracion:
         """Devuelve el valor para el boost por misma ubicación en similitud demográfica"""
         similitud = self.get_pesos_similitud()
         return similitud["boost_misma_ubicacion"]
+
+    def get_reglas_de_negocio(self) -> List[Dict]:
+        """Devuelve las reglas de negocio"""
+        valor_por_defecto = []
+        return self.config.get("reglas_de_negocio", valor_por_defecto)
