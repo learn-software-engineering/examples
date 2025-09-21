@@ -1,0 +1,274 @@
+{
+  "interacciones": [
+    {
+      "id": "interaccion_001",
+      "usuario": "usuario_001",
+      "pelicula": "pelicula_001",
+      "puntuacion": "5.0"
+    },
+    {
+      "id": "interaccion_002",
+      "usuario": "usuario_001",
+      "pelicula": "pelicula_004",
+      "puntuacion": "2.0"
+    },
+    {
+      "id": "interaccion_003",
+      "usuario": "usuario_001",
+      "pelicula": "pelicula_007",
+      "puntuacion": "4.0"
+    },
+    {
+      "id": "interaccion_004",
+      "usuario": "usuario_001",
+      "pelicula": "pelicula_002",
+      "puntuacion": "4.0"
+    },
+    {
+      "id": "interaccion_005",
+      "usuario": "usuario_001",
+      "pelicula": "pelicula_005",
+      "puntuacion": "1.0"
+    },
+    {
+      "id": "interaccion_006",
+      "usuario": "usuario_001",
+      "pelicula": "pelicula_008",
+      "puntuacion": "5.0"
+    },
+    {
+      "id": "interaccion_010",
+      "usuario": "usuario_002",
+      "pelicula": "pelicula_001",
+      "puntuacion": "4.0"
+    },
+    {
+      "id": "interaccion_011",
+      "usuario": "usuario_002",
+      "pelicula": "pelicula_004",
+      "puntuacion": "3.0"
+    },
+    {
+      "id": "interaccion_012",
+      "usuario": "usuario_002",
+      "pelicula": "pelicula_007",
+      "puntuacion": "3.0"
+    },
+    {
+      "id": "interaccion_013",
+      "usuario": "usuario_002",
+      "pelicula": "pelicula_002",
+      "puntuacion": "5.0"
+    },
+    {
+      "id": "interaccion_014",
+      "usuario": "usuario_002",
+      "pelicula": "pelicula_005",
+      "puntuacion": "2.0"
+    },
+    {
+      "id": "interaccion_015",
+      "usuario": "usuario_002",
+      "pelicula": "pelicula_008",
+      "puntuacion": "4.0"
+    },
+    {
+      "id": "interaccion_016",
+      "usuario": "usuario_002",
+      "pelicula": "pelicula_003",
+      "puntuacion": "4.0"
+    },
+    {
+      "id": "interaccion_019",
+      "usuario": "usuario_003",
+      "pelicula": "pelicula_001",
+      "puntuacion": "1.0"
+    },
+    {
+      "id": "interaccion_020",
+      "usuario": "usuario_003",
+      "pelicula": "pelicula_004",
+      "puntuacion": "5.0"
+    },
+    {
+      "id": "interaccion_021",
+      "usuario": "usuario_003",
+      "pelicula": "pelicula_007",
+      "puntuacion": "2.0"
+    },
+    {
+      "id": "interaccion_022",
+      "usuario": "usuario_003",
+      "pelicula": "pelicula_002",
+      "puntuacion": "2.0"
+    },
+    {
+      "id": "interaccion_023",
+      "usuario": "usuario_003",
+      "pelicula": "pelicula_005",
+      "puntuacion": "4.0"
+    },
+    {
+      "id": "interaccion_024",
+      "usuario": "usuario_003",
+      "pelicula": "pelicula_008",
+      "puntuacion": "1.0"
+    },
+    {
+      "id": "interaccion_026",
+      "usuario": "usuario_003",
+      "pelicula": "pelicula_006",
+      "puntuacion": "5.0"
+    },
+    {
+      "id": "interaccion_027",
+      "usuario": "usuario_003",
+      "pelicula": "pelicula_009",
+      "puntuacion": "4.0"
+    },
+    {
+      "id": "interaccion_028",
+      "usuario": "usuario_004",
+      "pelicula": "pelicula_001",
+      "puntuacion": "2.0"
+    },
+    {
+      "id": "interaccion_029",
+      "usuario": "usuario_004",
+      "pelicula": "pelicula_004",
+      "puntuacion": "1.0"
+    },
+    {
+      "id": "interaccion_030",
+      "usuario": "usuario_004",
+      "pelicula": "pelicula_007",
+      "puntuacion": "5.0"
+    },
+    {
+      "id": "interaccion_031",
+      "usuario": "usuario_004",
+      "pelicula": "pelicula_002",
+      "puntuacion": "1.0"
+    },
+    {
+      "id": "interaccion_033",
+      "usuario": "usuario_004",
+      "pelicula": "pelicula_008",
+      "puntuacion": "4.0"
+    },
+    {
+      "id": "interaccion_034",
+      "usuario": "usuario_004",
+      "pelicula": "pelicula_003",
+      "puntuacion": "2.0"
+    },
+    {
+      "id": "interaccion_035",
+      "usuario": "usuario_004",
+      "pelicula": "pelicula_006",
+      "puntuacion": "3.0"
+    },
+    {
+      "id": "interaccion_036",
+      "usuario": "usuario_004",
+      "pelicula": "pelicula_009",
+      "puntuacion": "5.0"
+    },
+    {
+      "id": "interaccion_037",
+      "usuario": "usuario_005",
+      "pelicula": "pelicula_001",
+      "puntuacion": "4.0"
+    },
+    {
+      "id": "interaccion_038",
+      "usuario": "usuario_005",
+      "pelicula": "pelicula_004",
+      "puntuacion": "4.0"
+    },
+    {
+      "id": "interaccion_039",
+      "usuario": "usuario_005",
+      "pelicula": "pelicula_007",
+      "puntuacion": "3.0"
+    },
+    {
+      "id": "interaccion_040",
+      "usuario": "usuario_005",
+      "pelicula": "pelicula_002",
+      "puntuacion": "3.0"
+    },
+    {
+      "id": "interaccion_041",
+      "usuario": "usuario_005",
+      "pelicula": "pelicula_005",
+      "puntuacion": "4.0"
+    },
+    {
+      "id": "interaccion_042",
+      "usuario": "usuario_005",
+      "pelicula": "pelicula_008",
+      "puntuacion": "3.0"
+    },
+    {
+      "id": "interaccion_045",
+      "usuario": "usuario_005",
+      "pelicula": "pelicula_009",
+      "puntuacion": "5.0"
+    },
+    {
+      "id": "interaccion_046",
+      "usuario": "usuario_006",
+      "pelicula": "pelicula_001",
+      "puntuacion": "2.0"
+    },
+    {
+      "id": "interaccion_047",
+      "usuario": "usuario_006",
+      "pelicula": "pelicula_004",
+      "puntuacion": "3.0"
+    },
+    {
+      "id": "interaccion_048",
+      "usuario": "usuario_006",
+      "pelicula": "pelicula_007",
+      "puntuacion": "2.0"
+    },
+    {
+      "id": "interaccion_049",
+      "usuario": "usuario_006",
+      "pelicula": "pelicula_002",
+      "puntuacion": "5.0"
+    },
+    {
+      "id": "interaccion_050",
+      "usuario": "usuario_006",
+      "pelicula": "pelicula_005",
+      "puntuacion": "4.0"
+    },
+    {
+      "id": "interaccion_051",
+      "usuario": "usuario_006",
+      "pelicula": "pelicula_008",
+      "puntuacion": "2.0"
+    },
+    {
+      "id": "interaccion_052",
+      "usuario": "usuario_006",
+      "pelicula": "pelicula_003",
+      "puntuacion": "1.0"
+    },
+    {
+      "id": "interaccion_053",
+      "usuario": "usuario_006",
+      "pelicula": "pelicula_006",
+      "puntuacion": "1.0"
+    },
+    {
+      "id": "interaccion_054",
+      "usuario": "usuario_006",
+      "pelicula": "pelicula_009",
+      "puntuacion": "1.0"
+    }
+  ]
+}

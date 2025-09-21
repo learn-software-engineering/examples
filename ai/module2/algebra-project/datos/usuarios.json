@@ -1,0 +1,22 @@
+{
+  "usuarios": {
+    "usuario_001": {
+      "nombre": "Ana López"
+    },
+    "usuario_002": {
+      "nombre": "Carlos Mendez"
+    },
+    "usuario_003": {
+      "nombre": "María Rodriguez"
+    },
+    "usuario_004": {
+      "nombre": "Diego Silva"
+    },
+    "usuario_005": {
+      "nombre": "Laura Martínez"
+    },
+    "usuario_006": {
+      "nombre": "Roberto García"
+    }
+  }
+}

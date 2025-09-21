@@ -1,0 +1,76 @@
+{
+  "peliculas": {
+    "pelicula_001": {
+      "nombre": "Duro de matar",
+      "genero": "Acción"
+    },
+    "pelicula_002": {
+      "nombre": "Terminator",
+      "genero": "Acción"
+    },
+    "pelicula_003": {
+      "nombre": "John Wick",
+      "genero": "Acción"
+    },
+    "pelicula_004": {
+      "nombre": "El exorcista",
+      "genero": "Terror"
+    },
+    "pelicula_005": {
+      "nombre": "Pesadilla en la calle Elm",
+      "genero": "Terror"
+    },
+    "pelicula_006": {
+      "nombre": "El resplandor",
+      "genero": "Terror"
+    },
+    "pelicula_007": {
+      "nombre": "Mi pobre angelito",
+      "genero": "Comedia"
+    },
+    "pelicula_008": {
+      "nombre": "Los cazafantasmas",
+      "genero": "Comedia"
+    },
+    "pelicula_009": {
+      "nombre": "¿Qué pasó ayer?",
+      "genero": "Comedia"
+    },
+    "pelicula_010": {
+      "nombre": "Forrest Gump",
+      "genero": "Comedia"
+    },
+    "pelicula_011": {
+      "nombre": "La máscara",
+      "genero": "Comedia"
+    },
+    "pelicula_012": {
+      "nombre": "Súper cool",
+      "genero": "Comedia"
+    },
+    "pelicula_013": {
+      "nombre": "Eso",
+      "genero": "Terror"
+    },
+    "pelicula_014": {
+      "nombre": "¡Huye!",
+      "genero": "Terror"
+    },
+    "pelicula_015": {
+      "nombre": "Halloween",
+      "genero": "Terror"
+    },
+    "pelicula_016": {
+      "nombre": "El origen",
+      "genero": "Acción"
+    },
+    "pelicula_017": {
+      "nombre": "Matrix",
+      "genero": "Acción"
+    },
+    "pelicula_018": {
+      "nombre": "Top Gun: Maverick",
+      "genero": "Acción"
+    }
+  }
+}
