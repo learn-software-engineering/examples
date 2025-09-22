@@ -13,7 +13,7 @@ class Usuario:
     donde n = número de películas. Cada dimensión representa la puntuación
     que el usuario dio a esa película específica.
 
-    Ejemplo: Si tenemos 3 películas [A, B, C] y el usuario calificó:
+    Ejemplo: Si tenemos 3 películas [A, B, C] y el usuario puntuó:
     - Película A: 4.5 estrellas
     - Película B: no vista (0.0)
     - Película C: 3.0 estrellas
@@ -38,7 +38,7 @@ class Usuario:
         self._id = identificacion
         self._nombre = nombre
         # Vector de puntuaciones inicializado en ceros
-        # 0 significa "no visto" o "sin calificar"
+        # 0 significa "no visto" o "sin puntuar"
         self._vector_puntuaciones = np.zeros(cantidad_peliculas)
 
     def actualizar_puntuacion_de_pelicula(self, indice_pelicula: int, puntuacion: float):
@@ -54,6 +54,18 @@ class Usuario:
         """
         self._vector_puntuaciones[indice_pelicula] = puntuacion
 
+    def obtener_id(self) -> str:
+        """
+        Retorna el ID del usuario.
+        """
+        return self._id
+
+    def obtener_nombre(self) -> str:
+        """
+        Retorna el nombre del usuario.
+        """
+        return self._nombre
+
     def obtener_vector_puntuaciones(self) -> np.ndarray:
         """
         Retorna el vector de puntuaciones del usuario.
@@ -65,7 +77,7 @@ class Usuario:
 
     def obtener_peliculas_vistas(self) -> List[int]:
         """
-        Retorna los índices de las películas que el usuario ha calificado.
+        Retorna los índices de las películas que el usuario ha puntuado.
 
         Returns:
             List[int]: Índices de películas con puntuación > 0
