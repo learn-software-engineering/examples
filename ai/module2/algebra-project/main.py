@@ -1,6 +1,3 @@
-import matplotlib.pyplot as plt
-
-
 from sistema_recomendaciones import SistemaDeRecomendaciones
 
 
@@ -32,6 +29,21 @@ def demostracion_del_sistema():
     print("*"*len(mensaje))
     print(mensaje)
     print("*"*len(mensaje))
+
+
+    for id_usuario in list(sistema_de_recomendaciones.ids_usuarios):
+        usuario = sistema_de_recomendaciones.usuarios[id_usuario]
+        print(f"   Recomendaciones para {usuario.obtener_nombre()}:")
+        try:
+            recomendaciones = sistema_de_recomendaciones.generar_recomendaciones(id_usuario, 3)
+            if recomendaciones:
+                for j, (id_pelicula, prediccion) in enumerate(recomendaciones, 1):
+                    nombre_pelicula = sistema_de_recomendaciones.peliculas[id_pelicula]["nombre"]
+                    print(f"      {j}- {nombre_pelicula} - Predicción de puntuación {prediccion:.2f}")
+            else:
+                print("      - No hay recomendaciones disponibles")
+        except Exception as e:
+            print(f"      - Error: {e}")
 
 
 # Punto de entrada principal

@@ -1,6 +1,6 @@
 import os
 import json
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Tuple
 
 import numpy as np
 from prettytable import PrettyTable
@@ -256,7 +256,7 @@ class SistemaDeRecomendaciones:
         print(f"   Matriz de similitud entre usuarios construida: {self.matriz_similitud_usuarios.shape}")
         return self.matriz_similitud_usuarios
 
-    def predecir_puntuacion(self, id_usuario: str, pelicula: str, k: int = 5) -> float:
+    def predecir_puntuacion(self, id_usuario: str, id_pelicula: str, k: int = 5) -> float:
         """
         Predice la puntuación que un usuario daría a una película.
 
@@ -271,7 +271,7 @@ class SistemaDeRecomendaciones:
 
         Args:
             id_usuario: ID del usuario para quien predecir
-            pelicula: Nombre de la película a predecir
+            id_pelicula: Nombre de la película a predecir
             k: Número de usuarios similares a considerar
 
         Returns:
@@ -280,20 +280,22 @@ class SistemaDeRecomendaciones:
         if id_usuario not in self.usuarios:
             raise ValueError(f"Usuario '{id_usuario}' no encontrado")
 
-        if pelicula not in self.ids_peliculas:
-            raise ValueError(f"Película '{pelicula}' no encontrada")
+        if id_pelicula not in self.ids_peliculas:
+            raise ValueError(f"Película con el ID '{id_pelicula}' no encontrada")
 
         if self.matriz_similitud_usuarios is None:
             self._construir_matriz_similitud()
 
         # Índices en las matrices
         indice_usuario = self.ids_usuarios.index(id_usuario)
-        indice_pelicula = self.ids_peliculas.index(pelicula)
+        indice_pelicula = self.ids_peliculas.index(id_pelicula)
+        pelicula = self.peliculas[id_pelicula]
+        nombre_pelicula = pelicula["nombre"]
 
         # Verificar si el usuario ya vio la película
         puntuacion_almacenada = self.matriz_puntuaciones[indice_usuario, indice_pelicula]
         if puntuacion_almacenada > 0:
-            print(f"   El usuario {id_usuario} ya calificó '{pelicula}' con {puntuacion_almacenada}")
+            print(f"   El usuario {id_usuario} ya calificó '{nombre_pelicula}' con {puntuacion_almacenada}")
             return puntuacion_almacenada
 
         # Obtener similitudes con todos los usuarios
@@ -311,7 +313,7 @@ class SistemaDeRecomendaciones:
         indices_topk = indices_topk[usuarios_relevantes[indices_topk] > 0]  # Solo positivos
 
         if len(indices_topk) == 0:
-            print(f"   No hay usuarios similares que hayan visto '{pelicula}'")
+            print(f"      No hay usuarios similares que hayan visto '{nombre_pelicula}'")
             return 0.0
 
         # Calcular predicción ponderada
@@ -329,12 +331,61 @@ class SistemaDeRecomendaciones:
 
         prediccion = numerador / denominador
 
-        print(f"   Predicción para {id_usuario} - '{pelicula}': {prediccion:.2f}")
-        print(f"   Basada en {len(indices_topk)} usuarios similares")
+        print(f"      Predicción para {id_usuario} - '{nombre_pelicula}': {prediccion:.2f} - Basada en {len(indices_topk)} usuarios similares")
 
         return prediccion
 
+    def generar_recomendaciones(self, id_usuario: str, k: int = 5) -> List[Tuple[str, float]]:
+        """
+        Genera recomendaciones personalizadas para un usuario.
 
+        Algoritmo:
+          1. Identificar películas no vistas por el usuario
+          2. Predecir calificaciones para esas películas
+          3. Ordenar por calificación predicha descendente
+          4. Retornar las top-N recomendaciones
+
+        Args:
+            id_usuario: Usuario para quien generar recomendaciones
+            k: Número de recomendaciones a generar
+
+        Returns:
+            List[Tuple[str, float]]: Lista de (película, predicción) ordenadas
+        """
+        if id_usuario not in self.usuarios:
+            raise ValueError(f"Usuario '{id_usuario}' no encontrado")
+
+        usuario = self.usuarios[id_usuario]
+        peliculas_vistas = usuario.obtener_peliculas_vistas()
+
+        print(f"      Películas ya vistas: {len(peliculas_vistas)}/{len(self.ids_peliculas)}")
+
+        # Películas no vistas
+        ids_peliculas_no_vistas = []
+        for i, pelicula in enumerate(self.peliculas):
+            if i not in peliculas_vistas:
+                ids_peliculas_no_vistas.append(pelicula)
+
+        if not ids_peliculas_no_vistas:
+            print("      El usuario ya vio todas las películas disponibles")
+            return []
+
+        # Predecir calificaciones para películas no vistas
+        predicciones = []
+        for id_pelicula in ids_peliculas_no_vistas:
+            prediccion = self.predecir_puntuacion(id_usuario, id_pelicula)
+            if prediccion > 0:  # Solo incluir predicciones válidas
+                predicciones.append((id_pelicula, prediccion))
+
+        # Ordenar por calificación predicha descendente
+        predicciones.sort(key=lambda x: x[1], reverse=True)
+
+        # Retornar top-N recomendaciones
+        recomendaciones = predicciones[:k]
+
+        print(f"      {len(recomendaciones)} recomendaciones generadas")
+
+        return recomendaciones
 
     def imprimir_reporte_completo(self):
         """

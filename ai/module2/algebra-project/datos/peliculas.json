@@ -9,7 +9,7 @@
       "genero": "Acción"
     },
     "pelicula_003": {
-      "nombre": "John Wick",
+      "nombre": "Matrix",
       "genero": "Acción"
     },
     "pelicula_004": {
@@ -29,7 +29,7 @@
       "genero": "Comedia"
     },
     "pelicula_008": {
-      "nombre": "Los cazafantasmas",
+      "nombre": "Forrest Gump",
       "genero": "Comedia"
     },
     "pelicula_009": {
@@ -37,39 +37,19 @@
       "genero": "Comedia"
     },
     "pelicula_010": {
-      "nombre": "Forrest Gump",
-      "genero": "Comedia"
-    },
-    "pelicula_011": {
       "nombre": "La máscara",
       "genero": "Comedia"
     },
-    "pelicula_012": {
-      "nombre": "Súper cool",
-      "genero": "Comedia"
-    },
-    "pelicula_013": {
+    "pelicula_011": {
       "nombre": "Eso",
       "genero": "Terror"
     },
-    "pelicula_014": {
-      "nombre": "¡Huye!",
-      "genero": "Terror"
-    },
-    "pelicula_015": {
+    "pelicula_012": {
       "nombre": "Halloween",
       "genero": "Terror"
     },
-    "pelicula_016": {
+    "pelicula_013": {
       "nombre": "El origen",
-      "genero": "Acción"
-    },
-    "pelicula_017": {
-      "nombre": "Matrix",
-      "genero": "Acción"
-    },
-    "pelicula_018": {
-      "nombre": "Top Gun: Maverick",
       "genero": "Acción"
     }
   }
